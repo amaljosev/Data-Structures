@@ -64,6 +64,9 @@ class BinarySearchTree {
 
   // Delete method
   void delete(int data) {
+
+
+    
     root = deleteHelper(root, data);
   }
 

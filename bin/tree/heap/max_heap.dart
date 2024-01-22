@@ -11,7 +11,7 @@ void main(List<String> args) {
   print("after insertion");
   heap.display();
 
-  heap.remove();
+  heap.remove();     
   print("after remove");
   heap.display();
   int peak = heap.peek();

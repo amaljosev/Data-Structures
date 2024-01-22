@@ -1,22 +1,28 @@
-void main() {
-  final graph = Graph();
+void main(List<String> args) {
+  Graph graph = Graph();
   graph.insert(10, 20, true);
   graph.insert(20, 40, true);
   graph.insert(40, 50, true);
   graph.insert(50, 30, true);
   graph.insert(10, 30, true);
   graph.insert(30, 40, true);
+
+  graph.display();
+  print('BFS:');
   graph.bfs(10);
+
+  print('\nDFS:');
+  graph.dfs(10);
 }
 
 class Graph {
-  Map<int, List<int>> map = {};
+  Map<dynamic, List<dynamic>> map = {};
 
-  addVertex(int data) {
+  void addVertex(dynamic data) {
     map[data] = [];
   }
 
-  insert(int vertex, int edge, bool isBidirectional) {
+  void insert(dynamic vertex, dynamic edge, bool isBidirectional) {
     if (!map.containsKey(vertex)) {
       addVertex(vertex);
     }
@@ -29,55 +35,62 @@ class Graph {
     }
   }
 
-  display() {
-    for (var m in map.keys) {
-      print('$m : ${map[m]!.join(',')}');
-    }
-  }
-  dfs(int startVertex){
-    if (!map.containsKey(startVertex)) {
-      print('vertex not found');
-      return;
-    }
-    Set<int> visited={};
-    dfsHelper(startVertex,visited);
-  }
-  
-  void dfsHelper(int vertex, Set<int> visited) {
-    visited.add(vertex);
-    print(vertex);
-    List<int>? edges=map[vertex];
-    if (edges!= null) {
-      for (var e in edges) {
-        if (!visited.contains(e)) {
-          dfsHelper(e, visited);
-        }
-      }
+  void display() {
+    for (var x in map.keys) {
+      print('$x: ${map[x]!.join(' ')}');
     }
   }
 
-  bfs(int startVertex){
+  void bfs(dynamic startVertex) {
     if (!map.containsKey(startVertex)) {
-      print('vertex not found');
+        print('$startVertex not present');
+        return;
+    }
+
+    Set<dynamic> visited = {};
+    List<dynamic> queue = [startVertex];
+
+    while (queue.isNotEmpty) {
+        dynamic vertex = queue.removeAt(0);
+        if (!visited.contains(vertex)) {
+            print(vertex);
+            visited.add(vertex);
+            List<dynamic>? edges = map[vertex];
+            if (edges != null) {
+                for (var edge in edges) {
+                    if (!visited.contains(edge)) {
+                        queue.add(edge);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+  void dfs(dynamic startVertex) {
+    if (!map.containsKey(startVertex)) {
+      print('$startVertex not present');
       return;
     }
-    Set<int> visited={};
-    List<int>? queue=[startVertex];
-    while (queue.isNotEmpty) {
-      int vertex=queue.removeAt(0);
-      if (!visited.contains(vertex)) {
-        print(vertex);
-        visited.add(vertex);
-      }
-      List<int>?edges=map[vertex];
-      if (edges!=null) {
-        for (var e in edges) {
-          if (!visited.contains(e)) {
-            queue.add(e);
-          }
+
+    Set<dynamic> visited = {};
+    dfsTraversal(startVertex, visited);
+  }
+
+  void dfsTraversal(dynamic vertex, Set<dynamic> visited) {
+    visited.add(vertex);
+    print(vertex);
+    List<dynamic>? edges = map[vertex];
+    if (edges != null) {
+      for (var edge in edges) {
+        if (!visited.contains(edge)) {
+          dfsTraversal(edge, visited);
         }
       }
     }
   }
-  
 }
+
+
+
