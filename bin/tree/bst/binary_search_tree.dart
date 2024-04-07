@@ -4,9 +4,7 @@ void main(List<String> args) {
   for (var a in arr) {
     tree.insert(a);
   }
-  tree.delete(20);
-  tree.delete(40);
-  tree.delete(60);
+  
   tree.inOrder();
 }
 
@@ -61,12 +59,11 @@ class BinarySearchTree {
       return searchHelper(node.right, data);
     }
   }
+  
 
   // Delete method
+
   void delete(int data) {
-
-
-    
     root = deleteHelper(root, data);
   }
 
@@ -105,6 +102,34 @@ class BinarySearchTree {
     }
     return minValue;
   }
+
+  //find nearest value
+
+  int findNearest(int target) {
+    if (root == null) {
+      throw Exception("Tree is empty");
+    }
+    return findNearestHelper(root, target, root!.data);
+  }
+
+  int findNearestHelper(Node? node, int target, int nearest) {
+    if (node == null) {
+      return nearest;
+    }
+
+    if ((node.data - target).abs() < (nearest - target).abs()) {
+      nearest = node.data;
+    }
+
+    if (target < node.data) {
+      return findNearestHelper(node.left, target, nearest);
+    } else if (target > node.data) {
+      return findNearestHelper(node.right, target, nearest);
+    } else {
+      return node.data;
+    }
+  }
+
 
   inOrder() {
     inOrderHelper(root);

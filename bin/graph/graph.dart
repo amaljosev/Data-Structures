@@ -5,7 +5,7 @@ void main(List<String> args) {
   graph.insert(40, 50, true);
   graph.insert(50, 30, true);
   graph.insert(10, 30, true);
-  graph.insert(30, 40, true);
+  graph.insert(30, 40, true); 
 
   graph.display();
   print('BFS:');

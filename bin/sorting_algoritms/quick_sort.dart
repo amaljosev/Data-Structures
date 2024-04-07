@@ -13,7 +13,7 @@ void quickSortHelper(List<int> array, int start, int end) {
     return;
   }
   int pivot = start;
-  int left = start + 1;
+  int left = start + 1; 
   int right = end;
   while (left <= right) {
     if (array[left] > array[pivot] && array[right] < array[pivot]) {

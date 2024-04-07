@@ -1,46 +1,69 @@
-void main(List<String> args) {
-  final trie=Trie('amal');
-  print(trie.contains('ama'));
-}
 class TrieNode {
-  Map<String, TrieNode> childern = {};
-  TrieNode();
-}
+  final Map<String, TrieNode?> children = {}; 
+  bool isEndOfWord = false;
 
-class Trie {
-  final root = TrieNode();
-  static const endSymbol = '*';
-  Trie(String str) {
-    populatePrefixTrie(str);
-  }
-  void populatePrefixTrie(String str) {
-    for (var i = 0; i < str.length; i++) {
-      insertString(0, str.substring(0, i + 1));
-    }
-  }
-
-  insertString(int index, String str) {
-    var node = root;
-    for (var i = index; i < str.length; i++) {
-      var letter = str[i];
-      if (!node.childern.containsKey(letter)) {
-        var newNode = TrieNode();
-        node.childern[letter] = newNode;
+  void insert(String word) {
+    var current = this;
+    for (var i = 0; i < word.length; i++) {
+      var char = word[i];
+      if (!current.children.containsKey(char)) {
+        current.children[char] = TrieNode();
       }
-      node = node.childern[letter]!;
+      current = current.children[char]!; 
     }
-    node.childern[endSymbol] = TrieNode();
+    current.isEndOfWord = true;
   }
 
-  bool contains(String str){
-    var node=root;
-    for (var i = 0; i < str.length; i++) {
-      var letter=str[i];
-      if (!node.childern.containsKey(letter)) {
+  bool search(String word) {
+    var current = this;
+    for (var i = 0; i < word.length; i++) {
+      var char = word[i];
+      if (!current.children.containsKey(char)) {
         return false;
       }
-      node=node.childern[letter]!;
+      current = current.children[char]!; 
     }
-    return node.childern.containsKey(endSymbol);
+    return current.isEndOfWord;
   }
+
+  List<String> findWordsWithPrefix(String prefix) {
+    var current = this;
+    for (var i = 0; i < prefix.length; i++) {
+      var char = prefix[i];
+      if (!current.children.containsKey(char)) {
+        return [];
+      }
+      current = current.children[char]!; 
+    }
+
+    var results = <String>[];
+    collectWords(current, prefix, results);
+    return results;
+  }
+
+  void collectWords(TrieNode node, String prefix, List<String> results) {
+    if (node.isEndOfWord) {
+      results.add(prefix);
+    }
+    node.children.forEach((char, child) {
+      if (child != null) { 
+        collectWords(child, prefix + char, results);
+      }
+    });
+  }
+}
+
+void main(List<String> args) {
+var trie = TrieNode();
+trie.insert('apple');
+trie.insert('ape');
+trie.insert('application');
+trie.insert('banana');
+trie.insert('ben');
+
+print(trie.search('apple'));   
+print(trie.search('ape'));     
+print(trie.search('ben'));     
+print(trie.findWordsWithPrefix('be')); 
+
 }

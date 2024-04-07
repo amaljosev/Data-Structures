@@ -24,6 +24,7 @@ class LinkedList {
 
     if (temp != null && temp.data == data) {
       head = temp.next;
+      return;
     }
 
     while (temp != null && temp.data != data) {

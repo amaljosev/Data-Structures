@@ -4,7 +4,7 @@ void main(List<String> args) {
   int result = binarySearch(arr, target, 0, arr.length - 1);
   print(result);
 }
- 
+
 int binarySearch(List<int> arr, int target, int left, int right) {
   if (left <= right) {
     int mid = (left + right) ~/ 2;
