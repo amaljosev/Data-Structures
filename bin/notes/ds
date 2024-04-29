@@ -1,0 +1,114 @@
+ds
+
+❓What is data structure?
+
+Definition: A data structure refers to a systematic way of organizing and storing data in a computer so that it can be accessed and manipulated efficiently.
+
+Purpose: It facilitates efficient data manipulation by providing various operations like insertion, deletion, traversal, and search.
+
+
+
+
+❓Linear Data Structures vs. Non-Linear Data Structures:
+
+
+Linear Data Structures:
+
+Definition: Linear data structures organize and store data elements sequentially, where each element is connected to its previous and next elements.
+
+Examples: Common linear data structures include arrays, linked lists, stacks, and queues.
+
+
+Non-Linear Data Structures:
+
+Definition: Non-linear data structures organize and store data elements in a hierarchical manner, where each element may have multiple predecessors and successors.
+
+Examples: Common non-linear data structures include trees, graphs, and hash tables.
+
+
+
+
+❓What is an array?
+
+An array is a data structure that stores a collection of elements of the same type in a contiguous memory location. It allows accessing elements using their index position.
+
+
+
+❓What is a Linked list?
+A linked list is a linear data structure consisting of a sequence of elements called nodes. Each node contains a data element and a reference (or pointer) to the next node in the sequence.
+
+
+
+Linked List:
+
+Dynamic data structure where elements (nodes) are not stored contiguously.
+Nodes contain data and a pointer to the next node.
+Supports dynamic sizing and efficient insertion/deletion operations.
+Access time is linear, as traversal is required to reach specific elements.
+Ideal for scenarios with frequent insertions/deletions and unpredictable data sizes.
+
+
+Array:
+
+Static data structure storing elements contiguously in memory.
+Supports random access to elements using index-based access.
+Fixed size determined at compile time.
+Insertion/deletion operations may require shifting elements, leading to time complexity of O(n).
+Suitable for scenarios requiring constant-time access and fixed-size collections.
+
+
+❓What is Queue
+
+A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle, where elements are inserted at the rear (enqueue) and removed from the front (dequeue).
+
+Applications: 
+Breadth-First Search (BFS)
+Task Scheduling
+music player
+
+Types: 
+> Linear Queue: In a linear queue, elements are arranged in a straight line, with a fixed front and rear. 
+> Circular Queue: In a circular queue, the rear of the queue can wrap around to the front, effectively creating a circular arrangement of elements. This helps utilize the available space more efficiently.
+> Priority Queue: In a priority queue, elements are stored based on their priority rather than their arrival time. Elements with higher priority are dequeued before those with lower priority, regardless of the order in which they were enqueued.
+
+
+❓What is a Stack
+
+A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle, where elements are inserted and removed from the same end called the top of the stack.
+
+Applications:
+Undo Mechanism
+Backtracking Algorithms(dfs)
+Browser History
+
+
+❓What is a hash table
+
+A hash table is a data structure that organizes key-value pairs for efficient retrieval, insertion, and deletion operations. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

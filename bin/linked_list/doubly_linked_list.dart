@@ -7,7 +7,7 @@ class Node {
 
 class DoubleLinkedList {
   Node? head;
-  Node? tail;
+  Node? tail; 
   void addNode(int data) {
     Node newNode = Node(data);
     if (head == null) {

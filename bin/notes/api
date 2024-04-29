@@ -1,0 +1,145 @@
+API
+
+> An API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other. 
+> It defines the methods and data formats that applications can use to request and exchange information.
+
+❓What is web services?
+
+> Web services are software components that allow machine- or application-oriented interaction over a network.
+
+❓what are the types of web services
+
+🔸SOAP (Simple Object Access Protocol): 
+> SOAP uses XML (Extensible Markup Language) for both data exchange and defining the communication protocol.  
+> Think of it as a stru bctured way of sending information using a specific format. 
+> SOAP messages are more complex and require stricter adherence to the format, making them more secure but also more heavyweight. 
+
+🔸REST (Representational State Transfer): 
+> REST is a more lightweight approach that leverages existing web standards like HTTP methods (GET, POST, PUT, etc.) and relies on URLs to identify resources.  
+> Imagine using familiar actions and web addresses to access and manipulate data. 
+> REST services are generally easier to develop and understand, making them a popular choice for modern web APIs.
+
+🔸GraphQL (GraphQL) is a query language for APIs that allows you to request specific data from a server in a single request. It provides a more flexible and efficient way to fetch data compared to traditional REST APIs.
+
+❓what are the http methods and use
+
+> GET: Used to retrieve data from the server.
+> POST: Used to submit data to the server to create a new resource.
+> PUT: Used to update an existing resource on the server. The entire resource is replaced with the new data provided in the request body.
+> DELETE: Used to delete a resource on the server. 
+> PATCH: Used to updates the specified fields in the resource, rather than replacing the entire resource.
+> OPTIONS: This method is used to determine the options supported by a server for a specific resource, such as the allowed HTTP methods.
+HEAD: This method retrieves the header information for a resource, without transferring the entire content. 
+
+
+❓Explain the difference between PUT and PATCH.
+
+PUT is used to update an entire resource, whereas PATCH is used to update only the parts of a resource that need to be changed.
+
+❓What is JSON?
+
+JSON stands for JavaScript Object Notation. It's a lightweight and easy-to-read format for storing and transmitting data. 
+> Data format: It's a way to structure information like lists and key-value pairs
+> SON uses plain text with curly braces, square brackets, and colons, making it easy for people to understand the content.
+> While inspired by JavaScript, JSON is not specific to any programming language. Many languages can work with JSON data.
+>  JSON is commonly used to send data between applications or servers.
+
+❓What is XML?
+
+XML stands for Extensible Markup Language. It's a way to store and transport data in a format that's both human-readable and machine-readable.
+XML offers strong validation and complex document handling
+
+❓What is client sever model?
+
+The client-server model is a way of structuring applications where tasks are divided between two entities:
+
+Client: Initiates requests for resources or services (e.g., your web browser).
+Server: Provides the resources or services requested by clients (e.g., a web server).
+
+❓What is statelessness?
+
+statelessness refers to the way a server handles each request independently. It doesn't remember any information about previous requests from the same client.
+
+❓What is an endpoint in the context of web services?
+
+An endpoint is a URL (Uniform Resource Locator) that is used to interact with a web service. Each endpoint represents a specific resource that can be accessed or manipulated using HTTP methods.
+
+❓what is the safest method , get or post, why?
+
+> The POST method is generally considered safer than the GET method because the data is not stored in the browser history or web server logs.
+
+
+❓what is authentication token and use?
+
+> An authentication token is like a digital key that verifies your identity to a server. It eliminates the need to constantly re-enter your login credentials (username and password) for repeated access within a certain timeframe.
+
+❓how pass authentication token to web services
+
+> Authentication tokens are typically passed to web services through HTTP headers. 
+> The most common practice is to include the token in the "Authorization" header of the HTTP request, prefixed with the authentication scheme, such as "Bearer" for OAuth tokens.
+
+❓what is interceptors in web services?
+
+> In web services, interceptors act as middlemen that intercept requests and responses flowing between the client and the server. 
+> They provide a way to add custom logic before, during, or after these interactions.
+> Validate tokens, encrypt data, or implement access controls.
+
+❓What is the purpose of an API key?
+It serves two main purposes:
+Identification and Authorization
+> Authorization :The API key determines if the application has permission to use the API and what functionalities it can access.
+> An API key is a unique identifier used to authenticate requests made to an API. 
+> It helps track and control access to the API, ensuring that only authorized users or applications can use its services.
+
+❓What are HTTP status codes, and why are they important?
+
+> HTTP status codes are standard response codes indicating the success, failure, or other status of a request. 
+> They provide information about the result of a request and help troubleshoot issues when interacting with web services.
+
+❓What are query parameters in the context of web service requests?
+
+Query parameters are additional parameters appended to the end of a URL to modify the behavior of a web service request. They are typically used for filtering, sorting, or pagination purposes.
+
+❓Explain the concept of rate limiting in web services.
+
+Rate limiting is a technique used to control the number of requests a client can make to a web service within a specified time period. It helps prevent abuse or overload of the server by limiting the rate at which requests can be made.
+
+❓What is the role of content negotiation in web services?
+
+Content negotiation is the process of selecting the appropriate representation of a resource based on the client's preferences and the server's capabilities. It allows clients and servers to communicate in different formats, such as JSON, XML, or HTML.
+
+❓How do you handle errors and exceptions in web service development?
+
+Try-Catch Blocks: You wrap your service logic in a try block, and any exceptions thrown within that block are caught by the following catch block(s). This allows you to handle specific exceptions gracefully and provide meaningful error responses.
+Custom Exceptions: Create custom exception classes to categorize different error types within your service. This improves code readability and maintainability.
+HTTP Status Codes: Use appropriate HTTP status codes in your error responses to indicate the nature of the error to the client. Common examples include:
+400 (Bad Request): for invalid user input.
+401 (Unauthorized): for missing or invalid authentication.
+500 (Internal Server Error): for unexpected server-side issues.
+
+❓What is CORS, and why is it important in web services?
+
+Cross-origin resource sharing (CORS) is a browser security feature that allows web pages from one domain to access resources from another domain. 
+
+❓What is a webhook, and how does it differ from an API?
+
+A webhook is a way for an application to provide other applications with real-time information. Unlike APIs, which require polling for data, webhooks enable servers to push data to client applications as soon as it becomes available.
+
+❓What are the benefits of using a RESTful API over other types of APIs?
+
+Some benefits of RESTful APIs include simplicity, scalability, statelessness, and wide adoption across various platforms and programming languages.
+
+❓Explain the concept of versioning in API design.
+
+Versioning in API design refers to the practice of maintaining multiple versions of an API to support changes and updates over time without breaking existing client applications. It allows developers to introduce new features or deprecate old ones while ensuring backward compatibility.
+
+
+
+
+
+
+
+
+
+
+

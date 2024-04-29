@@ -1,0 +1,119 @@
+oops
+
+> OOP stands for Object-Oriented Programming. 
+> It's a way to structure your code using objects.  
+> In Flutter, even widgets are objects!  It helps make code cleaner and more reusable.
+
+Classes: These act as blueprints for creating objects. They define the properties and methods that objects of that class will have.
+
+Objects: These are instances of a class. They hold the specific data (property values) and can execute the defined methods (behaviors).
+
+Inheritance: This allows you to create class hierarchies. A subclass inherits properties and methods from a parent class, promoting code reuse.
+
+Polymorphism: Enables you to write flexible code. The same method name can have different implementations in subclasses, allowing objects of different types to respond differently to the same message.
+
+Encapsulation: This is about bundling data and methods together within a class. It protects data integrity by controlling access through getters and setters.
+
+❓What is a instance variable?
+
+An instance variable is associated with an instance of a class . instance variable are declared in side the class and out side the method. instance variable are accessible throughout the entire class can be used by any method or constructor with in that class.
+They hold values that are unique to each instance of the class.
+
+❓What is a local variable?
+
+a local variable is declared within a block of code inside a method , loop , or conditional statement . it exists only with in the block where it is declared . 
+
+❓What is Mixins in Dart?
+> A mixin in Dart is a way to reuse code across multiple class hierarchies without the need for traditional inheritance.
+> Used with the "with" keyword to add its functionality to other classes.
+
+❓What is constructor in oops?
+> In Object-Oriented Programming (OOP), a constructor is a special method that is automatically called when you create a new object of a class. 
+> Constructors are the initializers for objects in OOP. 
+> They ensure objects start in a valid state by setting up their properties and potentially performing other essential tasks.
+
+
+
+
+
+
+State Management
+
+
+❓What is state management in flutter?
+> In Flutter, state management is all about handling and updating the data that influences your app's UI. 
+> This data, called state, can change based on user interactions, network calls, or other factors. 
+> Effectively managing state keeps your UI in sync with the current state of your app, ensuring a responsive and user-friendly experience.
+
+
+🔷GetX
+
+
+❓What is getx in flutter?d  
+
+
+> GetX in Flutter is a popular and light weight state management library that simplifies handling application state.
+Key Features:
+State Management: Offers reactive state updates and UI rebuilding based on state changes.
+Dependency Injection: Manages dependencies between different parts of your app.
+Routing: Provides a robust system for navigation between different screens in your app.
+Benefits:
+Simpler Syntax: GetX promotes a clean and easy-to-learn approach to state management.
+Performance-Focused: Designed to be efficient and minimize resource consumption.
+All-in-One Solution: Combines state management, dependency injection, and routing in a single package.
+
+
+❓Explain dependency injection with GetX?
+ Dependency injection is a way to manage the relationships between different parts of your app.
+
+How it works in GetX:
+
+Define Dependencies: You declare the dependencies a class needs using a special syntax.
+Provide Dependencies: You tell GetX how to create these dependencies using functions or existing instances. This can be done globally or for specific routes.
+Inject Dependencies: GetX automatically injects the dependencies into your class constructor when you create an instance.
+
+
+❓what is the difference between obx and get builder?
+> Both Obx and GetBuilder are widgets used in GetX for managing UI updates based on state changes in your Flutter app.
+
+Obx:
+
+Focus on Variables: Designed to work with reactive variables declared with .obs.
+Automatic Rebuild: When the reactive variable's value changes, Obx automatically rebuilds the wrapped widget, ensuring your UI reflects the updated state.
+Lightweight: Suitable for simple UI updates triggered by a single reactive variable.
+
+GetBuilder:
+
+More Control: Offers more control over what gets rebuilt. You define a builder function that specifies the widget tree to be built based on the current state.
+Manual Rebuild: Requires you to call update() from the controller to trigger a rebuild when the state changes.
+Flexibility: Can handle complex UI updates involving multiple state changes or conditional logic within the builder function.
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

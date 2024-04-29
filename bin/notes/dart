@@ -1,0 +1,159 @@
+Dart
+
+❓What is dart?
+
+> Dart is a programming language developed by Google, primarily used for building web, mobile, and server applications. 
+> It was designed with the goal of being easy to learn, fast to execute, and suitable for a wide range of development scenarios.
+
+❓Advantages of dart?
+
+🔸Productivity: Dart's clean syntax and features like strong typing and asynchronous programming enhance developer productivity, enabling faster development cycles.
+
+🔸Performance: Dart offers fast execution speeds, especially with its Just-in-Time (JIT) and Ahead-of-Time (AOT) compilation, making it suitable for building high-performance applications.
+
+🔸Versatility: Dart is versatile, used for web, mobile, desktop, and server-side development, providing developers with a single language for various platforms.
+
+🔸Flutter Framework: Dart is the language for Flutter, a popular UI toolkit for building native-quality mobile, web, and desktop applications from a single codebase, leading to rapid development and code reuse.
+
+🔸Community Support: Dart has a growing community of developers contributing libraries, frameworks, and resources, fostering collaboration and innovation within the ecosystem.
+
+🔸Maintainability: Dart's strong typing and object-oriented features promote code maintainability, making it easier to understand, refactor, and maintain large codebases over time.
+
+
+❓What are the disadvantages of dart?
+
+🔸Learning Curve: While Dart has a relatively simple syntax, developers may need time to learn its features and nuances, especially if they are transitioning from other programming languages.
+
+🔸Limited Ecosystem: Compared to more established languages like JavaScript or Python, Dart's ecosystem is smaller, with fewer libraries, frameworks, and community resources available. This may result in a lack of certain tools or resources for specific development needs.
+
+🔸Platform Maturity: While Dart has gained traction, especially with Flutter, it may still be considered less mature compared to other languages like JavaScript or Java. This may lead to occasional issues or limitations, particularly in less common use cases or platforms.
+
+🔸Compilation Overhead: While Dart's compilation process is efficient, it may introduce overhead during development, especially when using features like hot reload in Flutter, which can sometimes slow down the development workflow.
+
+🔸Adoption Challenges: Dart's adoption outside of the Flutter ecosystem may face challenges, as developers and organizations may be hesitant to adopt a relatively new language, especially if they are already invested in other technologies.
+
+🔸Tooling Limitations: While Dart has good tooling support, including IDEs and analysis tools, it may still lack certain advanced features or integrations compared to more mature languages and ecosystems.
+
+🔸Community Size: Although Dart's community is growing, it may still be smaller compared to communities around other languages, resulting in fewer resources, tutorials, or community-driven solutions available.
+
+
+
+
+
+
+
+
+
+
+
+
+❓what is the difference between const and final?
+
+> both const and final are used to declare variables that cannot be reassigned once they have been initialized.
+
+> const:
+Variables declared with const are compile-time constants.
+They are evaluated and stored at compile time, making them more efficient in terms of performance and memory usage.
+
+>final:
+Variables declared with final are run-time constants.
+They are evaluated and stored at run time, like regular variables, and their value is calculated when they are initialized.
+
+❓What is compile time?
+
+> Compile time in Flutter refers to the phase when your Dart code is converted into machine-readable instructions before running your app. 
+> It's when Flutter checks for syntax errors and optimizes your code for performance. 
+
+❓What is runtime?
+> Runtime in Flutter refers to the phase when your Flutter app is actually running on a device or simulator. 
+> It's when your code is executed, user interactions are handled, and your app's UI is rendered in real-time. 
+> Any errors or exceptions that occur during this phase are known as runtime errors.
+
+❓what is AOT compile?
+
+> AOT stands for Ahead-of-Time compilation in Flutter. 
+> It's a compilation technique where Dart code is compiled into native machine code ahead of time, before the app is run on a device. 
+> This helps improve app performance and startup time because the code doesn't need to be compiled on the device at runtime.
+> AOT compilation is commonly used for releasing Flutter apps for production.
+
+❓What is JIT compile?
+
+> JIT stands for Just-in-Time compilation in Flutter. 
+> It's a compilation technique where Dart code is compiled into native machine code on-the-fly, at runtime, as the app runs on a device. 
+> This allows for features like hot reload, where code changes can be applied instantly without restarting the app.
+> JIT compilation is typically used during development for faster iteration and debugging.
+
+
+❓What is Hot reload?
+
+>Hot reload is a feature in Flutter that allows developers to make changes to their code while the app is running, and see those changes reflected immediately on the device or emulator without having to restart the entire app.
+
+
+❓What is Hot restart?
+> Hot restart is a feature in Flutter that allows developers to restart their app while preserving the app's current state and UI. 
+> Unlike hot reload, which applies code changes without restarting the entire app, hot restart completely restarts the app from scratch. 
+> However, it reloads the app's code and assets, applying any changes made since the last build, while maintaining the app's current state. 
+> This is useful for testing changes that require a full app restart, such as modifications to app initialization logic or changes to native code dependencies.
+
+❓What is anonymous functions
+
+>Anonymous functions, also known as lambda functions or closures, are functions in Dart that are defined without a name. 
+> Instead of being declared with a name, they are defined inline, typically used as arguments to other functions or assigned to variables.
+
+Anonymous functions in Dart are commonly used for:
+
+Callback Functions: They are often used as callback functions, passed as arguments to other functions, especially in asynchronous operations like Future.then, Stream.listen, or Iterable.forEach.
+
+❓what is arrow function
+
+> Arrow functions are commonly used for short, single-expression functions, such as mapping or filtering lists, where the body of the function can be written concisely in one line. 
+> They offer a more readable and expressive way to define functions, especially in functional programming paradigms.
+
+
+🔸Single Expression: Arrow functions can only contain a single expression. They are suitable for short, concise functions where the entire body can be expressed in one line.
+
+🔸No Statement Blocks: Arrow functions cannot contain statement blocks or multiple statements. They are not suitable for functions that require multiple lines of code or complex logic.
+
+🔸Implicit Return: Arrow functions implicitly return the result of the expression. They are not suitable for functions that require explicit return statements or complex control flow.
+
+🔸Limited Parameter List: Arrow functions have a concise parameter list syntax and are not suitable for functions with complex parameter lists or optional parameters.
+
+❓What is async?
+
+> The async keyword in Dart is used to declare that a function is asynchronous. 
+> An asynchronous function is one that can perform tasks concurrently without blocking the execution of other code.
+
+🔸use: 
+
+We use the async keyword in Dart for functions that perform asynchronous operations, such as fetching data from a network, reading files, or waiting for user input. 
+
+❓ What is the use of await keyword?
+
+When a function is marked as async, it can use the await keyword to pause its execution until a Future completes, without blocking the entire program.
+
+❓Explain the difference between synchronous and asynchronous code execution in Dart.
+
+> Synchronous code executes line by line, blocking until each operation completes. 
+> Asynchronous code allows operations to run concurrently, not blocking the execution of subsequent code.
+
+❓What is the async* keyword used for in Dart?
+
+> The async* keyword in Dart is used to create asynchronous generator functions. 
+> These functions are special because they don't return a single value like regular functions, instead, they yield a sequence of values over time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

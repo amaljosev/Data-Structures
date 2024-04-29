@@ -1,0 +1,258 @@
+DB
+
+
+❓What is SQL?
+
+> SQL stands for Structured Query Language. 
+> It's a specialized language for communicating with relational databases.  
+> Think of it as a set of instructions for interacting with data stored in tables with rows and columns. 
+
+	
+❓what is relational databases?
+> Relational databases are a type of database that stores and organizes data in a structured way, making it easy to relate and connect different pieces of information.
+> Data is stored in tables, similar to spreadsheets with rows and columns. 
+
+🔸Relational databases are widely used for various applications due to their:
+
+Structured organization: Makes data easy to understand and manage.
+Data integrity: Enforces data consistency through relationships and rules.
+Flexibility: Queries can retrieve and manipulate data from multiple tables simultaneously.
+
+
+❓what is relational databases?
+> Stores data differently than traditional relational databases. 
+> No tables with rows and columns. 
+> More flexible for various data types. 
+> Examples: Documents, key-value pairs, graphs.
+
+
+❓What is unique constraints?
+Unique constraints in SQL are rules enforced within a table to ensure the values in a specific column (or set of columns) are distinct. They prevent duplicate data from entering the table. 
+eg: 
+ALTER TABLE Products
+ADD CONSTRAINT unique_color_size UNIQUE (Color, Size);
+
+
+❓What is the use of ALTER TABLE?
+The ALTER TABLE statement in SQL is a powerful tool for modifying the structure of existing tables within a database.
+
+
+❓what is a primary key in sql?
+
+it is a unique constrint, It guarantees no duplicate entries exist, ensuring data integrity in a column or a group of columns.
+Primary key values cannot be null, meaning every row must have a distinct value in this key.
+A table can only have one primary key.
+
+
+❓What is a foreign key?
+
+> A foreign key in SQL is like a reference code that creates a link between two tables. 
+> A foreign key is a column (or set of columns) in one database table that references the primary key of another table.
+eg:
+CREATE TABLE Customers (
+  CustomerID INT PRIMARY KEY,
+  CustomerName VARCHAR(255)
+);
+
+CREATE TABLE Orders (
+  OrderID INT PRIMARY KEY,
+  CustomerID INT,
+  OrderDate DATE,
+  FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
+❓How can i add a new column in a existing table?
+>ALTER TABLE Customers ADD Email VARCHAR(50);
+
+ALTER TABLE: This keyword initiates the modification of a table.
+ADD: This keyword specifies that you're adding something to the table.
+
+
+❓What is Db versioning ?
+> Database versioning is keeping track of changes to a database, like saving different drafts of a document. 
+> This lets you see what changed, go back to an earlier version if needed, and ensure everyone's working with the right version.
+
+❓Why we change the version?
+> Introducing new functionalities often requires adding new tables, columns, or modifying existing ones. This necessitates a version update to reflect the changes.
+> Sometimes, database updates might contain bug fixes or optimizations. 
+> If the way your data is organized fundamentally changes (e.g., splitting a table, merging tables).
+
+SQL:
+> Data is organized in tables with rows and columns, ensuring consistency.
+> Defines data types and relationships beforehand, offering data integrity.
+> Tables can be linked through joins, enabling complex queries across related data.
+> Well-suited for: Traditional business applications, relational data, where structure and data integrity are crucial.
+
+NoSQL:
+> Accommodates various data formats like documents, key-value pairs, or graphs.
+> Schema can evolve as data needs change, offering adaptability.
+> Uses various query languages depending on the specific NoSQL type.
+> Well-suited for: Big data, unstructured or semi-structured data, real-time applications
+
+
+🟡 Retrieving Data (SELECT):
+
+This is the core of working with data in SQL. It allows you to fetch specific information from tables.
+eg:
+SELECT column1, column2, ..., columnN
+FROM table_name
+[WHERE condition];
+
+
+🟡Filtering Data (WHERE):
+
+> The WHERE clause refines your results based on specific criteria.
+> You can use comparison operators like =, >, <, <> (not equal), and logical operators like AND, OR, and NOT.
+eg: 
+SELECT *  -- * selects all columns
+FROM products
+WHERE price > 100;
+
+🟡Ordering Results (ORDER BY):
+
+The ORDER BY clause sorts the retrieved data in ascending or descending order.
+eg:
+SELECT name
+FROM customers
+ORDER BY name DESC;
+
+🟡Removing Duplicates (DISTINCT):
+
+The DISTINCT keyword ensures you get unique values in a column.
+eg: 
+SELECT DISTINCT city
+FROM customers;
+
+🟡Combining Data from Tables (JOIN):
+
+Joins allow you to merge data from multiple tables based on a shared column. 
+eg:
+SELECT column1_from_table1, column2_from_table2
+FROM table1
+INNER JOIN table2 ON table1.column_name = table2.column_name;
+
+🟡Inserting Data (INSERT INTO):
+
+This allows you to add new records to a table.
+eg:
+INSERT INTO table_name (column1, column2, ..., columnN)
+VALUES (value1, value2, ..., valueN);
+
+🟡 Updating Data (UPDATE):
+
+This enables you to modify existing data in a table.
+eg:
+UPDATE customers
+SET email = 'new_email@example.com'
+WHERE id = 1;
+
+
+🟡 Deleting Data (DELETE):
+
+This permanently removes records from a table.
+eg:
+DELETE FROM orders
+WHERE order_date < '2023-01-01';
+
+
+
+
+
+
+
+
+
+🔷SQFlite
+
+
+
+❓What is SQFlite?
+> Sqflite in Flutter is a popular plugin for working with SQLite databases:
+> Local Database: Allows you to store and manage data directly on the device.
+> CRUD Operations: Supports basic database operations like Create, Read, Update, and Delete (CRUD) for your data.
+> SQLite Benefits: Leverages the efficiency and reliability of SQLite, making it suitable for various data structures.
+
+
+❓is sqflite or hive is good ?
+
+🔸Hive (Simpler, Faster for Small Data):
+
+> Easier to use for basic data storage.
+> Generally faster for small to moderate data amounts.
+
+🔸Sqflite (More Powerful, Scalable):
+
+> More powerful for complex queries and data relationships.
+> Handles large datasets better.
+
+
+
+
+
+
+
+🔷Hive
+
+
+
+❓What is Hive?
+
+> Lightweight NoSQL database for storing data locally on device. 
+> Think key-value store - add, remove, find data with keys. 
+> Enables offline functionality and faster app performance.
+
+
+
+❓what is a box in hive?
+> Box = container for your app's data.
+> Stores key-value pairs (key = string, value = any Hive-compatible data). 
+> You can have multiple boxes to organize your data.
+
+
+
+❓what is a lazy box?
+> In Hive (Flutter), a lazy box is a memory-efficient way to store data:
+> Unlike regular boxes that load everything in memory, lazy boxes only load keys initially.
+> When you need a value, Hive uses the key to retrieve it from storage (like a mini database lookup).
+> This saves memory for large datasets, but accessing values might be slightly slower.
+
+
+
+❓what is encrypted box in hive?
+
+> In Hive (Flutter), an encrypted box adds a layer of security to your data storage:
+> Uses AES-256 encryption to scramble data before storing it on the device.
+> Use encrypted boxes for storing sensitive information like passwords, login credentials, or financial data.
+
+
+❓What is a adaptor in hive?
+> Hive supports basic data types but not complex objects directly.
+> An adapter translates your custom objects to and from a format Hive understands (usually binary).
+> adapter enables Hive to store and retrieve your custom data efficiently.
+
+
+❓What is type adaptor in hive?
+> A type adapter is a specific type of adapter it Handles serialization (converting object to a format Hive can store) and deserialization (converting stored data back to your object) during data storage and retrieval.
+
+
+❓what is hive migration
+> Hive migration (Flutter) refers to the process of moving your data and schema from one Hive version or storage location to another
+> Scenarios: Upgrading Hive versions, switching to a different device, or moving data to a new cloud storage solution might necessitate migration.
+> Hive migration ensures your app continues to access and work with its data seamlessly after a change in the storage environment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
